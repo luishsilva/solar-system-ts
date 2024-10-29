@@ -5,15 +5,7 @@
 import { data } from "../data/data";
 
 interface PlanetsType {
-    id: string,
-    name: string,
-    isPlanet: boolean,
-    mass: { massValue: number, massExponent: number },
-    vol: { volValue: number, volExponent: number },
-    gravity: number,
-    avgTemp: number,
-    moonsCount?: number,
-    moons?: string[]
+    name: string
 }
 
 export function getPlanetNames(planets: PlanetsType[]) {
