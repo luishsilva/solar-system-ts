@@ -5,7 +5,7 @@
 import { data } from "../data/data";
 
 interface PlanetsType {
-    name: string
+    name: string;
 }
 
 export function getPlanetNames(planets: PlanetsType[]) {

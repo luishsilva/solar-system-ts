@@ -5,7 +5,7 @@
 import { data } from "../data/data"
 
 interface AsteroidsType {
-    name: string
+    name: string;
 }
 
 export function getAsteroidNames(asteroids: AsteroidsType[]) {
