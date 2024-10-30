@@ -10,7 +10,6 @@ interface PlanetType {
 
 interface MethodType {
     planets: PlanetType[];
-    
     moonName: string;
 }
 
