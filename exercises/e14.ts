@@ -17,7 +17,7 @@ export function getOrbitalPeriodsSum(asteroid: AsteroidsData) {
     return data.asteroids.reduce((accumulator, currentValue) => accumulator + currentValue.orbitalPeriod, 0);
 }
 
-getOrbitalPeriodsSum(data);
+getOrbitalPeriodsSum({asteroids: data.asteroids});
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-14"
