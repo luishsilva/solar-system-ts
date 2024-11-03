@@ -20,7 +20,7 @@ interface PlanetData {
 }
 
 export function getAveragePlanetsTemperature(data: PlanetData) {
-    return data.planets.reduce((accumulator, currentValue) => accumulator + (currentValue.avgTemp), 0) / data.planets.length;
+    return data.planets.reduce((accumulator, currentValue) => accumulator + currentValue.avgTemp, 0) / data.planets.length;
 }
 
 getAveragePlanetsTemperature(data)
