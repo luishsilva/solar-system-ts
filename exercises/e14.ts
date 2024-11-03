@@ -9,15 +9,11 @@ interface Asteroid {
     orbitalPeriod: number
 }
 
-interface AsteroidsData {
-    asteroids: Asteroid[]
+export function getOrbitalPeriodsSum(asteroids: Asteroid[]) {
+    return asteroids.reduce((accumulator, currentValue) => accumulator + currentValue.orbitalPeriod, 0);
 }
 
-export function getOrbitalPeriodsSum(asteroid: AsteroidsData) {
-    return data.asteroids.reduce((accumulator, currentValue) => accumulator + currentValue.orbitalPeriod, 0);
-}
-
-getOrbitalPeriodsSum({asteroids: data.asteroids});
+getOrbitalPeriodsSum(data.asteroids);
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-14"
