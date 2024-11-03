@@ -24,8 +24,6 @@ export const allPlanetsMoonsCount = (data: PlanetData) => {
         accumulator + (currentValue.moonsCount || 0), 0)
 };
 
-// const { planets } = data;
-
 allPlanetsMoonsCount(data);
 
 // === TEST YOURSELF ===
