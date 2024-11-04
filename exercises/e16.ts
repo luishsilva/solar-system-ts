@@ -2,18 +2,18 @@
 
 // DO NOT USE `any` for this, you will need to use generics in order to pass both the vitest tests and the tsc compiler
 
-export function find(array: number[], callback: (value: number) => boolean) {
-    let returnArray: number[] = [];
-    array.forEach(element => {
+export function find<ValueType>(array: ValueType[], callback: (value: ValueType) => boolean): ValueType | undefined {
+
+    for (const element of array) {
         if (callback(element)) {
-            returnArray.push(element)
+            return element;
         }
-    });
-    console.log(returnArray)
-    return returnArray;
+    };
+
+    return undefined;
 }
 
 const array = [1,2,3];
 const callbackResult = (value: number) => value === 2
 
-find(array, callbackResult)
+console.log(find(array, callbackResult))
