@@ -2,25 +2,21 @@
 // Return a Planet by a given moon name
 //  must have destructured parameters
 import { data } from '../data/data';
+import { Planet } from '../types/types';
 
-interface PlanetType {
-    name: string;
-    moons?: string[];
-}
-
-interface MethodType {
-    planets: PlanetType[];
+type PlanetByMoon = {
+    planets: Planet[];
     moonName: string;
 }
 
-export function findPlanetByMoon({ planets, moonName }: MethodType) {
+export function findPlanetByMoon({ planets, moonName }: PlanetByMoon) {
     return planets
-    .find(planet => planet.moons?.some(moon => moon.toLocaleLowerCase() === moonName.toLocaleLowerCase()) ?? planet);
+    .find(planet => planet.moons?.some(moon => moon.toLocaleLowerCase() === moonName.toLocaleLowerCase()));
 
 }
 
 const { planets } = data;
-findPlanetByMoon({planets, moonName: 'triton'})
+findPlanetByMoon({planets, moonName: 'triton'});
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-8"

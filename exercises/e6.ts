@@ -2,13 +2,9 @@
 // Return an array with all asteroids discovered after a given year
 
 import { data } from '../data/data';
+import { Asteroid } from '../types/types';
 
-interface AsteroidType {
-    name: string;
-    discoveryYear: number;
-}
-
-export function getAsteroidsDiscoveredAfterYear(asteroids: AsteroidType[], year: number) {
+export function getAsteroidsDiscoveredAfterYear(asteroids: Asteroid[], year: number) {
     return asteroids
         .filter((asteroid) => asteroid.discoveryYear > year);
 }

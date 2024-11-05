@@ -1,19 +1,8 @@
 // SPACE DATA EXERCISE 11
 // Return an array of Planets with less than 10 moons
 // include planets with 0 moons
-import { data } from "../data/data";
-
-interface Planet {
-    id: string,
-    name: string,
-    isPlanet: boolean,
-    mass: { massValue: number, massExponent: number },
-    vol: { volValue: number, volExponent: number },
-    gravity: number,
-    avgTemp: number,
-    moonsCount?: number,
-    moons?: string[],
-}
+import { data } from '../data/data';
+import { Planet } from '../types/types';
 
 export function lowMoonsPlanets(planets: Planet[]) {
     return planets.filter(planet => 

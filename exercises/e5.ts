@@ -3,28 +3,12 @@
 // Return example: ['name1', 'name2', ... , 'nameN']
 // Note: This input should be destructured from the function parameter
 import { data } from '../data/data';
-
-interface PlanetType {
-  id: string,
-  name: string,
-  isPlanet: boolean,
-  mass: { massValue: number, massExponent: number },
-  vol: { volValue: number, volExponent: number },
-  gravity: number,
-  avgTemp: number,
-  moonsCount?: number,
-  moons?: string[],
-}
-
-interface MethodType {
-  planets: PlanetType[];
-  greaterThanOrEqualTo: number;
-}
+import { MassData } from '../types/types'
 
 export function getPlanetNamesWithMassValue({
   planets,
   greaterThanOrEqualTo,
-}: MethodType) {
+}: MassData) {
   const result = planets
     .filter(planet => planet.mass.massValue >= greaterThanOrEqualTo)
     .map(planet => planet.name);
@@ -41,6 +25,6 @@ const param = {
 getPlanetNamesWithMassValue(param)
 
 // === TEST YOURSELF ===
-// Once you're finished run the test with "npm run test-5"
+// Once you're finished run the test with 'npm run test-5'
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function

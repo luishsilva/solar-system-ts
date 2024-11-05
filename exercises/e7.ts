@@ -2,13 +2,9 @@
 // Return an array of all Planets names that have moons
 
 import { data } from '../data/data';
+import { Planet } from '../types/types';
 
-interface PlanetsType {
-    name: string;
-    moons?: string[];
-}
-
-export function getPlanetsWithMoons(planets: PlanetsType[]) {
+export function getPlanetsWithMoons(planets: Planet[]) {
     return planets.filter((planet) => planet.moons !== undefined).map(planet => planet.name);
 }
 

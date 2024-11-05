@@ -2,20 +2,9 @@
 // Return an array of Planets' without moons
 
 import { data } from '../data/data';
+import { Planet } from '../types/types';
 
-interface Planets {
-    id: string,
-    name: string,
-    isPlanet: boolean,
-    mass: { massValue: number, massExponent: number },
-    vol: { volValue: number, volExponent: number },
-    gravity: number,
-    avgTemp: number,
-    moonsCount?: number,
-    moons?: string[],
-}
-
-export function getPlanetsWithNoMoons(planets: Planets[]) {
+export function getPlanetsWithNoMoons(planets: Planet[]) {
     return planets.filter((planet) => planet.moons === undefined)
 }
 

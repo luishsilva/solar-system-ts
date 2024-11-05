@@ -2,19 +2,10 @@
 // Return a given asteroid object of data
 // make sure that you destructure your parameters
 import { data } from '../data/data';
-
-interface Asteroid {
-    name: string, 
-    discoveryYear: number, 
-    orbitalPeriod: number
-}
-
-interface Data {
-    asteroids: Asteroid[];
-}
+import { AllData } from '../types/types';
 
 interface AsteroidData {
-    allData: Data,
+    allData: AllData,
     asteroidName: string
 }
 

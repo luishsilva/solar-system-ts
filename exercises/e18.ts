@@ -4,19 +4,9 @@
 // Hint: use a Map data structure instead of an object if you want typescript to be happy
 
 import { data } from '../data/data';
+import { Asteroid } from '../types/types';
 
-interface Asteroids {
-    name: string, 
-    discoveryYear: number, 
-    orbitalPeriod: number
-}
-
-interface AsteroidsYears {
-    year: number,
-    total: number
-}
-
-export function getGreatestDiscoveryYear(asteroids: Asteroids[]) {
+export function getGreatestDiscoveryYear(asteroids: Asteroid[]) {
     let asteroidsYears: number[] = [];
 
     for (let i = 0; i < asteroids.length; i++) {
