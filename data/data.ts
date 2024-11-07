@@ -1,4 +1,7 @@
-export const data = {
+import { AllData } from "../types/types";
+
+// Why do I need to add the type here?
+export const data: AllData = {
   planets: [
     {
       id: "uranus",

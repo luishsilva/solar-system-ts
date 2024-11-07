@@ -5,20 +5,20 @@ const people = [
     { name: "rachel", age: 10 },
   ];
 
-export const minBy = <ValueType, ObjKeyType>(array: ValueType[], callback: (value: ValueType | undefined) => ObjKeyType) => {
+// I kept the Generic type as ValueType just for understanding since I'm not used to use Generics
+export const minBy = <T>(array: T[], callback: (value: T) => string | number) => {
    
-    if (array.length === 0) return undefined
+    if (!array[0]) return undefined
 
-    let minValue = array[0];
-    let minKeyValue = callback(minValue)
+    let minValue: T = array[0];
 
-    for (let i = 0; i < array.length; i++) {
-        let currentValue = array[i];
-        let currentKey = callback(currentValue)
+    let callbackValue = callback(minValue);
 
-        if (currentKey < minKeyValue) {
-            minValue = currentValue;
-            minKeyValue = currentKey;
+    for (let item of array) {
+        const currentValue = callback(item);
+        if (currentValue < callbackValue) {
+            minValue = item;
+            callbackValue = currentValue;
         }
     } 
 
@@ -27,23 +27,22 @@ export const minBy = <ValueType, ObjKeyType>(array: ValueType[], callback: (valu
 
 minBy(people, (people) => people?.age)
 
-export function maxBy<ValueType, ObjKeyType>(array: ValueType[], callback: (value: ValueType | undefined) => ObjKeyType) {
-    if (array.length === 0) return undefined
+export function maxBy<T>(array: T[], callback: (value: T | T) => string | number) {
+    if (!array[0]) return undefined
 
-    let minValue = array[0];
-    let minKeyValue = callback(minValue)
+    let maxValue: T = array[0];
+    let callbackValue = callback(maxValue);
 
-    for (let i = 0; i < array.length; i++) {
-        let currentValue = array[i];
-        let currentKey = callback(currentValue)
 
-        if (currentKey > minKeyValue) {
-            minValue = currentValue;
-            minKeyValue = currentKey;
+    for (let item of array) {
+        const currentValue = callback(item);
+        if (currentValue > callbackValue) {
+            maxValue = item;
+            callbackValue = currentValue;
         }
     } 
 
-    return minValue;
+    return maxValue;
 }
 
 maxBy(people, (people) => people?.name);
